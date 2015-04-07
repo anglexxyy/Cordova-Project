@@ -1,0 +1,80 @@
+{
+    "org.apache.cordova.device": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.device"
+        }
+    },
+    "org.apache.cordova.battery-status": {
+        "source": {
+            "type": "local",
+            "path": "../hello/plugins/org.apache.cordova.battery-status"
+        }
+    },
+    "org.apache.cordova.camera": {
+        "source": {
+            "type": "local",
+            "path": "../hello/plugins/org.apache.cordova.camera"
+        }
+    },
+    "org.apache.cordova.console": {
+        "source": {
+            "type": "local",
+            "path": "../hello/plugins/org.apache.cordova.console"
+        }
+    },
+    "org.apache.cordova.dialogs": {
+        "source": {
+            "type": "local",
+            "path": "../hello/plugins/org.apache.cordova.dialogs"
+        }
+    },
+    "org.apache.cordova.file": {
+        "source": {
+            "type": "local",
+            "path": "../hello/plugins/org.apache.cordova.file"
+        }
+    },
+    "org.apache.cordova.file-transfer": {
+        "source": {
+            "type": "local",
+            "path": "../hello/plugins/org.apache.cordova.file-transfer"
+        }
+    },
+    "org.apache.cordova.globalization": {
+        "source": {
+            "type": "local",
+            "path": "../hello/plugins/org.apache.cordova.globalization"
+        }
+    },
+    "org.apache.cordova.inappbrowser": {
+        "source": {
+            "type": "local",
+            "path": "../hello/plugins/org.apache.cordova.inappbrowser"
+        }
+    },
+    "org.apache.cordova.media": {
+        "source": {
+            "type": "local",
+            "path": "../hello/plugins/org.apache.cordova.media"
+        }
+    },
+    "org.apache.cordova.media-capture": {
+        "source": {
+            "type": "local",
+            "path": "../hello/plugins/org.apache.cordova.media-capture"
+        }
+    },
+    "org.apache.cordova.splashscreen": {
+        "source": {
+            "type": "local",
+            "path": "../hello/plugins/org.apache.cordova.splashscreen"
+        }
+    },
+    "org.apache.cordova.vibration": {
+        "source": {
+            "type": "local",
+            "path": "../hello/plugins/org.apache.cordova.vibration"
+        }
+    }
+}
