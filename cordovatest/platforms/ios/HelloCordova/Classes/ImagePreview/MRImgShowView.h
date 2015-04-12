@@ -32,6 +32,11 @@ typedef NS_ENUM(NSInteger, MRImgLocation) {
 
 - (id)initWithFrame:(CGRect)frame;
 
+- (void)initScrollView;
+- (void)setImgSource:(NSMutableArray *)imgSource;
+- (void)setCurIndex:(NSInteger)curIndex;
+- (void) updateMRView:(CGFloat) width deviceHeight:(CGFloat) height;
+
 //- (id)initWithFrame:(CGRect)frame withSourceData:(NSMutableArray *)imgSource withIndex:(NSInteger)index;
 
 // 谦让双击放大手势

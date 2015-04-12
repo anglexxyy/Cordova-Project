@@ -13,7 +13,7 @@
 
 @interface CollectionViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-
+@property (strong, nonatomic) SingleImage *singleImage;
 @end
 
 @implementation CollectionViewController
@@ -23,7 +23,7 @@ static NSString * const reuseIdentifier = @"Cell";
 - (void)viewDidLoad {
     [self setCellSize];
     [super viewDidLoad];
-    
+    _singleImage = [SingleImage sharedInstance];
     
 
     
@@ -65,14 +65,14 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 //#warning Incomplete method implementation -- Return the number of items in the section
-    return 10;
+    return _singleImage.imageData.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     // Configure the cell
-    UIImage* image = [UIImage imageNamed:@"kitten.jpg"];
+    UIImage* image = _singleImage.imageData[indexPath.row];
     cell.cellImageView.image = image;
     
     return cell;
@@ -80,10 +80,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDelegate>
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    SingleImage *singleImage = [SingleImage sharedInstance];
-    if (singleImage.changeImageblock) {
-        singleImage.changeImageblock(@"kitten.jpg");
+    if (_singleImage.changeImageblock) {
+        _singleImage.changeImageblock(indexPath.row);
     }
     
     [self performSegueWithIdentifier:@"unwinToHome" sender:self];

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-typedef void (^changeImageblock)(NSString* imgName);
+typedef void (^changeImageblock)(int imgIndex);
 @interface SingleImage : NSObject
 @property (nonatomic, retain) NSMutableArray *imageData;
 @property (nonatomic,copy) changeImageblock changeImageblock;

@@ -11,6 +11,8 @@
 #import "SingleImage.h"
 @interface SingleImageViewController ()
 
+@property (strong, nonatomic) MRImgShowView *scrollView;
+@property (strong, nonatomic) SingleImage* singleImage;
 
 @end
 
@@ -19,17 +21,25 @@
 
 - (void)viewDidLoad {
 //    [SingleImage sharedInstance].changeCurrentIndex = @selector(didReceiveMemoryWarning:);
-    SingleImage *singleImage =[SingleImage sharedInstance];
-    singleImage.changeImageblock = ^(NSString *imagName){
-        self.imageView.image = [UIImage imageNamed:imagName];
-        NSLog(@"block call success");
+    _singleImage =[SingleImage sharedInstance];
+    _singleImage.changeImageblock = ^(int imgIndex){
+        [_scrollView setCurIndex:imgIndex];
     };
-    [super viewDidLoad];
-    self.mianScrollView.contentSize = CGSizeMake(self.mianScrollView.frame.size.width * 3, self.mianScrollView.frame.size.height * 4);
-    [self.mianScrollView setContentOffset:CGPointMake(self.mianScrollView.frame.size.width, 0)];
-    NSLog(@"width:%f----heigit:%f",self.mianScrollView.contentSize.width,self.mianScrollView.contentSize.height);
+
+    [self _requestData];
     
+//    NSLog(@"width:%f----heigit:%f",self.scrollView.contentSize.width,self.scrollView.contentSize.height);
+
+    
+    self.scrollView = [[MRImgShowView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    //    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * 3, self.scrollView.frame.size.height);
+    //    [self.scrollView setContentOffset:CGPointMake(self.scrollView.frame.size.width, 0)];
+    [self.scrollView initScrollView];
+    [self.scrollView setImgSource:_singleImage.imageData];
+    [self.scrollView setCurIndex:0];
+    [self.view1 addSubview:self.scrollView];
     // Do any additional setup after loading the view.
+    [super viewDidLoad];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -101,6 +111,8 @@
 {
     NSLog(@"dscroll ecelerating");
 }
+
+
 /*
 #pragma mark - Navigation
 
@@ -111,16 +123,27 @@
 }
 */
 
+#pragma mark -屏幕旋转
+-(BOOL) shouldAutorotate {
+    return true;
+}
+
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration{
+    NSLog(@"width:%f----heigit:%f",self.view.frame.size.width,self.view.frame.size.height);
+    [self.scrollView updateMRView:self.view.frame.size.width deviceHeight:self.view.frame.size.height];
+    NSLog(@"contentwidth:%f----contentheigit:%f",self.scrollView.contentSize.width,self.scrollView.contentSize.height);
+}
+
 #pragma mark -请求数据
 - (void)_requestData{
     
-    _data = [[NSMutableArray alloc] init];
+    _singleImage.imageData = [[NSMutableArray alloc] init];
     
     for (int i = 0; i < 12; i++) {
         NSString *imgName = [NSString stringWithFormat:@"%d.jpg",i];
         UIImage *img = [UIImage imageNamed:imgName];
-        [_data addObject:img];
-        [img release];
+        [_singleImage.imageData addObject:img];
     }
     
 }

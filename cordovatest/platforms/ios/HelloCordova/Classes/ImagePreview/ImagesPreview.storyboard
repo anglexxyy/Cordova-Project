@@ -18,39 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sHZ-ai-3bG" customClass="MRImgShowView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FQP-qz-q84">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4WK-e2-fFq">
-                                        <rect key="frame" x="-320" y="0.0" width="320" height="548"/>
-                                    </imageView>
-                                    <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="usG-Wf-xUj">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="LQR-wL-2Cm">
-                                        <rect key="frame" x="320" y="0.0" width="320" height="548"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="LQR-wL-2Cm" firstAttribute="leading" secondItem="usG-Wf-xUj" secondAttribute="trailing" id="00x-eK-58g"/>
-                                    <constraint firstItem="usG-Wf-xUj" firstAttribute="width" secondItem="4WK-e2-fFq" secondAttribute="width" id="0pq-tW-SIb"/>
-                                    <constraint firstItem="usG-Wf-xUj" firstAttribute="width" secondItem="LQR-wL-2Cm" secondAttribute="width" id="6Ik-KQ-7N5"/>
-                                    <constraint firstItem="usG-Wf-xUj" firstAttribute="top" secondItem="sHZ-ai-3bG" secondAttribute="top" id="7gR-1O-xAZ"/>
-                                    <constraint firstAttribute="centerY" secondItem="usG-Wf-xUj" secondAttribute="centerY" id="7pt-4y-qaa"/>
-                                    <constraint firstItem="4WK-e2-fFq" firstAttribute="bottom" secondItem="usG-Wf-xUj" secondAttribute="bottom" id="Cxz-HW-Oqc"/>
-                                    <constraint firstAttribute="trailing" secondItem="usG-Wf-xUj" secondAttribute="trailing" id="H7r-Y1-Zws"/>
-                                    <constraint firstAttribute="centerX" secondItem="usG-Wf-xUj" secondAttribute="centerX" id="S8R-bf-cM6"/>
-                                    <constraint firstItem="usG-Wf-xUj" firstAttribute="leading" secondItem="4WK-e2-fFq" secondAttribute="trailing" id="ToW-uq-YX7"/>
-                                    <constraint firstItem="usG-Wf-xUj" firstAttribute="leading" secondItem="sHZ-ai-3bG" secondAttribute="leading" id="XA1-uc-4uk"/>
-                                    <constraint firstItem="LQR-wL-2Cm" firstAttribute="bottom" secondItem="usG-Wf-xUj" secondAttribute="bottom" id="ekg-gH-ODM"/>
-                                    <constraint firstAttribute="bottom" secondItem="usG-Wf-xUj" secondAttribute="bottom" id="mHY-kP-oPP"/>
-                                    <constraint firstItem="LQR-wL-2Cm" firstAttribute="top" secondItem="usG-Wf-xUj" secondAttribute="top" id="nrf-Fq-xIc"/>
-                                    <constraint firstItem="4WK-e2-fFq" firstAttribute="top" secondItem="usG-Wf-xUj" secondAttribute="top" id="tnp-zt-hY4"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="yde-MT-SNm" id="imP-wR-w0m"/>
-                                </connections>
-                            </scrollView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CaC-jS-r0d">
                                 <rect key="frame" x="0.0" y="20" width="320" height="40"/>
                                 <subviews>
@@ -103,12 +74,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="CaC-jS-r0d" firstAttribute="top" secondItem="YCq-Rs-Ox3" secondAttribute="bottom" id="RwQ-R2-6t8"/>
-                            <constraint firstAttribute="centerX" secondItem="sHZ-ai-3bG" secondAttribute="centerX" id="TxD-IW-TgA"/>
+                            <constraint firstItem="pNz-us-FhZ" firstAttribute="top" secondItem="FQP-qz-q84" secondAttribute="bottom" id="6Jg-7m-P2q"/>
+                            <constraint firstItem="FQP-qz-q84" firstAttribute="top" secondItem="YCq-Rs-Ox3" secondAttribute="bottom" id="A9F-5c-7pR"/>
+                            <constraint firstItem="CaC-jS-r0d" firstAttribute="top" secondItem="YCq-Rs-Ox3" secondAttribute="top" id="RwQ-R2-6t8"/>
+                            <constraint firstItem="FQP-qz-q84" firstAttribute="leading" secondItem="lqD-Pe-dCl" secondAttribute="leadingMargin" constant="-16" id="aJf-Tf-C8Q"/>
+                            <constraint firstAttribute="centerX" secondItem="FQP-qz-q84" secondAttribute="centerX" id="dwP-xp-KGm"/>
                             <constraint firstItem="CaC-jS-r0d" firstAttribute="leading" secondItem="lqD-Pe-dCl" secondAttribute="leading" id="oym-UN-Lag"/>
-                            <constraint firstItem="sHZ-ai-3bG" firstAttribute="top" secondItem="CaC-jS-r0d" secondAttribute="top" id="pZi-kV-t0v"/>
-                            <constraint firstItem="sHZ-ai-3bG" firstAttribute="leading" secondItem="CaC-jS-r0d" secondAttribute="leading" id="q60-aM-IU9"/>
-                            <constraint firstItem="pNz-us-FhZ" firstAttribute="top" secondItem="sHZ-ai-3bG" secondAttribute="bottom" id="suM-dp-6nB"/>
                             <constraint firstAttribute="centerX" secondItem="CaC-jS-r0d" secondAttribute="centerX" id="xlZ-8m-yek"/>
                         </constraints>
                         <connections>
@@ -117,10 +88,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="lrP-eP-nhl"/>
                     <connections>
-                        <outlet property="imageView" destination="usG-Wf-xUj" id="4D0-kO-GlN"/>
-                        <outlet property="mianScrollView" destination="sHZ-ai-3bG" id="v0k-L5-vRY"/>
                         <outlet property="tapRecognizer" destination="6BT-3K-Puc" id="Jiq-yD-bWk"/>
                         <outlet property="toolBarView" destination="CaC-jS-r0d" id="w13-Nl-vt3"/>
+                        <outlet property="view1" destination="FQP-qz-q84" id="b2x-eB-WS8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHb-At-hyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -243,9 +213,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0.jpg" width="640" height="960"/>
-        <image name="1.jpg" width="640" height="960"/>
-        <image name="2.jpg" width="640" height="960"/>
         <image name="kitten.jpg" width="1024" height="681"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

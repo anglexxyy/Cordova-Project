@@ -3,7 +3,31 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[MRImgShowView scrollViewWithPosition:withImgView:]:MRImgShowView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SingleImageViewController viewDidLoad]:SingleImageViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.mianScrollView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[CollectionViewController viewDidLoad]:CollectionViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[MRImgShowView creatImageView]:MRImgShowView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.frame.size.width">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "-[CollectionViewController collectionView:didSelectItemAtIndexPath:]:CollectionViewController.m">
@@ -18,6 +42,9 @@
                value = "self.presentationController">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SingleImageViewController _requestData]:SingleImageViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

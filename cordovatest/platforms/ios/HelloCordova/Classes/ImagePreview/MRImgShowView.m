@@ -22,6 +22,8 @@
 @implementation MRImgShowView
 {
     UIScrollView *_scrCenter;
+    UIScrollView *_scrLeft;
+    UIScrollView *_scrRight;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -32,7 +34,7 @@
     }
     return self;
 }
-/*
+
 - (id)initWithFrame:(CGRect)frame withSourceData:(NSMutableArray *)imgSource withIndex:(NSInteger)index{
     
     self = [super initWithFrame:frame];
@@ -51,7 +53,7 @@
     }
     return self;
 }
- */
+ 
 
 - (void)dealloc{
   
@@ -130,11 +132,11 @@
                    imgCenter, @"imgCenter",
                    imgRight, @"imgRight", nil];
     
-    UIScrollView *scrLeft =
+    _scrLeft =
     [self scrollViewWithPosition:MRImgLocationLeft withImgView:imgLeft];
     _scrCenter =
     [self scrollViewWithPosition:MRImgLocationCenter withImgView:imgCenter];
-    UIScrollView *scrRight =
+    _scrRight =
     [self scrollViewWithPosition:MRImgLocationRight withImgView:imgRight];
     
     // 初始化scrCenter
@@ -148,9 +150,9 @@
 //    [doubleTap release];
     
     // 放入展示板
-    [self addSubview:scrLeft];
+    [self addSubview:_scrLeft];
     [self addSubview:_scrCenter];
-    [self addSubview:scrRight];
+    [self addSubview:_scrRight];
     
 //    [imgLeft release];
 //    [imgCenter release];
@@ -163,7 +165,7 @@
     
     if (_imgSource != imgSource) {
 //        [_imgSource release];
-//        _imgSource = [imgSource retain];
+        _imgSource = imgSource;
      
         //  设置展示板尺寸
         [self setConSize];
@@ -362,7 +364,25 @@
         [_scrCenter setZoomScale:kImgZoomScaleMax animated:YES];
     }
 }
+
+- (void) updateMRView:(CGFloat) width deviceHeight:(CGFloat) height{
+    CGRect rect =  CGRectMake(0, 0, width, height);
+    self.frame = rect;
+    [_scrCenter setZoomScale:kImgZoomScaleMin animated:YES];
+    [_scrCenter setFrame:CGRectMake(width, 0, width, height)];
+    [_scrRight setFrame:CGRectMake(width * 2, 0, width, height)];
+    [_scrLeft setFrame:CGRectMake(0, 0, width, height)];
+    UIImageView *vLift = kImgVLeft;
+    UIImageView *vCenter = kImgVCenter;
+    UIImageView *vRight = kImgVRight;
+    vLift.frame = rect;
+    vCenter.frame = rect;
+    vRight.frame = rect;
+    [self setConSize];
+}
+
 @end
+
 
 // 版权属于原作者
 // http://code4app.com (cn) http://code4app.net (en)
