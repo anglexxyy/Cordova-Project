@@ -1032,6 +1032,10 @@
     [self processOpenUrl:url pageLoaded:NO];
 }
 
+- (BOOL) prefersStatusBarHidden {
+    return true;
+}
+
 // ///////////////////////
 
 - (void)dealloc

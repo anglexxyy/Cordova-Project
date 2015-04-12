@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[CollectionViewController viewDidLoad]:CollectionViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[CollectionViewController collectionView:didSelectItemAtIndexPath:]:CollectionViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.parentViewController">
+            </PersistentString>
+            <PersistentString
+               value = "singleImage.changeImageblock">
+            </PersistentString>
+            <PersistentString
+               value = "self.presentationController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

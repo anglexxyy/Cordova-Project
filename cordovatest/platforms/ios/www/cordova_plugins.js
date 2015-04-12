@@ -321,7 +321,14 @@ module.exports = [
             "navigator.notification",
             "navigator"
         ]
-    }
+      },
+      {
+          "file": "plugins/com.nikoyo.plugins.test/www/myplugin.js",
+          "id": "com.nikoyo.plugins.test",
+          "merges": [
+             "Echo"
+         ]
+      }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
@@ -338,7 +345,8 @@ module.exports.metadata =
     "org.apache.cordova.media": "0.2.16",
     "org.apache.cordova.media-capture": "0.3.6",
     "org.apache.cordova.splashscreen": "1.0.0",
-    "org.apache.cordova.vibration": "0.3.13"
+    "org.apache.cordova.vibration": "0.3.13",
+    "com.nikoyo.plugins.test": "0.0.1"
 }
 // BOTTOM OF METADATA
 });

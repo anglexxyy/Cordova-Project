@@ -12,22 +12,34 @@
 	<dict>
 		<key>56C04CA1DCBA9E02DC154186F30B21B1204260A7</key>
 		<string>https://github.com/anglexxyy/CordovaProjectTemplate.git</string>
+		<key>B88FC9FE0534E4318CE57BB7F1334D74F305ED37</key>
+		<string>https://github.com/anglexxyy/Cordova-Project.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>hello/platforms/ios/HelloWorld.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>56C04CA1DCBA9E02DC154186F30B21B1204260A7</key>
+		<string>../../../../../../Project</string>
+		<key>B88FC9FE0534E4318CE57BB7F1334D74F305ED37</key>
 		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/anglexxyy/CordovaProjectTemplate.git</string>
+	<string>https://github.com/anglexxyy/Cordova-Project.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>56C04CA1DCBA9E02DC154186F30B21B1204260A7</string>
+	<string>B88FC9FE0534E4318CE57BB7F1334D74F305ED37</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B88FC9FE0534E4318CE57BB7F1334D74F305ED37</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Cordova-Project</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
